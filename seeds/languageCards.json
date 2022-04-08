@@ -1,0 +1,38 @@
+[
+  {
+    "coding_lang": "JavaScript",
+    "language_id": 1,
+    "filename": "01-blossoming-apricot.jpg",
+    "lang_summary": "often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web."
+  },
+  {
+    "coding_lang": "HTML",
+    "language_id": 2,
+    "filename": "01-blossoming-apricot.jpg",
+    "lang_sumary": "a standard markup language for documents designed to be displayed in a web browser."
+  },
+  {
+    "coding_lang": "CSS",
+    "language_id": 3,
+    "filename": "01-blossoming-apricot.jpg",
+    "lang_summary": "a style sheet language used for describing the presentation of a document written in a markup language such as HTML."
+  },
+  {
+    "coding_lang": "C++",
+    "language_id": 4,
+    "filename": "01-blossoming-apricot.jpg",
+    "lang_summary": "a general-purpose programming language created as an extension of the C programming language."
+  },
+  {
+    "coding_lang": "Python",
+    "language_id": 5,
+    "filename": "01-blossoming-apricot.jpg",
+    "lang_summary": "a programming language that can be used for a wide variety of applications including high-level data structures, dynamic typing, dynamic binding, and many more features that make it as useful for complex application development."
+  },
+  {
+    "coding_lang": "Other",
+    "language_id": 6,
+    "filename": "01-blossoming-apricot.jpg",
+    "lang_summary": "All other languages"
+  }
+]
