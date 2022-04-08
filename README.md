@@ -1,1 +1,0 @@
-# Seans-Blog-For-Tech-Heads
