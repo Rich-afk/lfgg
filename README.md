@@ -1,3 +1,1 @@
-# lfgg
-
-## Description
+# Seans-Blog-For-Tech-Heads

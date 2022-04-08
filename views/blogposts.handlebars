@@ -1,0 +1,33 @@
+<div class="text-center">
+  <h2>{{blogpost.title}}</h2>
+  <p>{{blogpost.content}}</p>
+  <p>Created by {{blogpost.user.name}} on {{format_date blogpost.date_created}}</p>
+  <article class="post" id="comment-form">
+    <form class="comment-form">
+      <div>Comment</div>
+      <div>
+        <textarea name="comment-body"></textarea>
+      </div>
+      <div>
+        <button type="submit" id="submit">Submit</button>
+      </div>
+    </form>
+  </article>
+</div>
+<div class="comment-list">
+  {{#each blogpost.comments as |comment| }}
+  <div id="comment-{{comment.id}}">
+    <p>
+      {{comment.description}}
+    </p>
+    <div class="col-md-4">
+      <button id="delete" class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button>
+      <button id="edit" class="btn btn-sm btn-danger" data-id="{{comment.id}}">EDIT</button>
+    </div>
+  </div>
+  {{/each}}
+</div>
+<script>
+  const postId = {{ blogpost.id }};
+</script>
+<script src="/js/comment.js"></script>

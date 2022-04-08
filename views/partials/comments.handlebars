@@ -1,0 +1,15 @@
+<div>
+    {{#each this}}
+    <section>
+        <div class="row mb-4 project">
+            {{user.name}} on {{format_date comment.date_created}}
+        </div>
+        <div class="col-md-7">
+            {{description}}
+        </div>
+        <div class="col-md-4">
+        <button id="delete" class="btn btn-sm btn-danger" data-id="{{blogpost.id}}">DELETE</button>
+      </div>
+    </section>
+    {{/each}}
+</div>

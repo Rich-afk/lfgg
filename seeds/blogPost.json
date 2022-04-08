@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Music Near Me",
+    "content": "Find Music new you",
+    "user_id": 1
+  },
+  {
+    "title": "The Ultimate Tech Quiz",
+    "content": "quizzes",
+    "user_id": 2
+  },
+  {
+    "title": "Roll 'Em Up",
+    "content": "maze game",
+    "user_id": 3
+  }
+]
