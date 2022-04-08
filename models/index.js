@@ -1,23 +1,24 @@
 const User = require('./User');
-const BlogPost = require('./BlogPost');
+const Note = require('./Note');
 const Comment = require('./Comment');
+const Language = require('./Language');
 
-User.hasMany(BlogPost, {
+User.hasMany(Note, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
 
-BlogPost.belongsTo(User, {
+Note.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-BlogPost.hasMany(Comment, {
-  foreignKey: 'blogpost_id',
+Note.hasMany(Comment, {
+  foreignKey: 'note_id',
   onDelete: 'CASCADE'
 });
 
-Comment.belongsTo(BlogPost, {
-  foreignKey: 'blogpost_id'
+Comment.belongsTo(Note, {
+  foreignKey: 'note_id'
 });
 
 User.hasMany(Comment, {
@@ -28,4 +29,14 @@ User.hasMany(Comment, {
 Comment.belongsTo(User, {
   foreignKey: 'user_id'
 })
-module.exports = { User, BlogPost, Comment };
+
+Language.hasMany(Note, {
+  foreignKey: 'language_id',
+  onDelete: 'CASCADE'
+});
+
+Note.belongsTo(Language, {
+  foreignKey: 'language_id'
+});
+
+module.exports = { User, Note, Comment, Language };

@@ -1,7 +1,7 @@
 <div class="text-center">
-  <h2>{{blogpost.title}}</h2>
-  <p>{{blogpost.content}}</p>
-  <p>Created by {{blogpost.user.name}} on {{format_date blogpost.date_created}}</p>
+  <h2>{{note.title}}</h2>
+  <p>{{note.content}}</p>
+  <p>Created by {{note.user.name}} on {{format_date note.date_created}}</p>
   <article class="post" id="comment-form">
     <form class="comment-form">
       <div>Comment</div>
@@ -15,7 +15,7 @@
   </article>
 </div>
 <div class="comment-list">
-  {{#each blogpost.comments as |comment| }}
+  {{#each note.comments as |comment| }}
   <div id="comment-{{comment.id}}">
     <p>
       {{comment.description}}
@@ -28,6 +28,6 @@
   {{/each}}
 </div>
 <script>
-  const postId = {{ blogpost.id }};
+  const postId = {{ note.id }};
 </script>
 <script src="/js/comment.js"></script>
