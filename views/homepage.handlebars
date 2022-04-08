@@ -1,0 +1,18 @@
+{{#each posts as |blogpost|}}
+<div class="row mb-4 project">
+  <div class="col-md-5">
+    <a href="/blogposts/{{blogpost.id}}">{{blogpost.title}}</a>
+    <p>
+      Posted by {{blogpost.user.name}} on {{format_date blogpost.date_created}}
+    </p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{blogpost.title}}
+      <br></br>
+      {{blogpost.content}}
+    </p>
+  </div>
+</div>
+
+{{/each}}
