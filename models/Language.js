@@ -11,9 +11,24 @@ Language.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    coding_lang: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    filename: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    lang_summary: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    language_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'language',
+        key: 'id'
+      }
     }
   },
   {
