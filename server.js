@@ -11,10 +11,11 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+
 const hbs = exphbs.create({ helpers });
 
 const sess = {
-  secret: '6b10253c-3301-4e21-bf69-58ddd0a52b36',
+  secret: 'c556616f-b9ca-4be4-bb25-4110ab024770',
   cookie: {},
   resave: false,
   saveUninitialized: true,
@@ -37,5 +38,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Server listening on: http://localhost/:' + PORT));
+  app.listen(PORT, () => console.log('Server listening on: http://localhost:' + PORT));
 });
