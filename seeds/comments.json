@@ -1,0 +1,20 @@
+[
+  {
+    "description": "interesting info",
+    "user_id": 1,
+    "blogpost_id": 1
+  
+  },
+  {
+    "description": "interesting info 2",
+    "user_id": 2,
+    "blogpost_id": 2
+  
+  },
+  {
+    "description": "interesting info 3",
+    "user_id": 3,
+    "blogpost_id": 3
+   
+  }
+]
