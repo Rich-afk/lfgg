@@ -36,6 +36,19 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/notes/:id', withAuth, async (req, res) => {
+  try {
+    const dbNoteData = await User.findByPk(req.params.id);
+
+    const note = dbNoteData.get({ plain: true });
+
+    res.render('note', { note, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.post('/', withAuth, async (req, res) => {
   try {
     const newNotePost = await Note.create({
