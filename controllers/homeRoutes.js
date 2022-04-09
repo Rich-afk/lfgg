@@ -29,6 +29,17 @@ router.get('/', async (req, res) => {
 
 router.get('/language/:id', withAuth, async (req, res) => {
   try {
+    const dbLanguagesData = await Language.findAll({
+      include: [
+        {
+          model: Note,
+          attributes: ['title', 'original_poster'],
+        },
+      ],
+    });
+    const languages = dbLanguagesData.map((language) =>
+      language.get({ plain: true })
+    );
     const dbLanguageData = await Language.findByPk(req.params.id, {
       include: [
         {
@@ -36,6 +47,7 @@ router.get('/language/:id', withAuth, async (req, res) => {
           attributes: [
             'id',
             'title',
+            'original_poster',
             'content',
             'date_created',
             'user_id',
@@ -45,7 +57,7 @@ router.get('/language/:id', withAuth, async (req, res) => {
     });
 
     const language = dbLanguageData.get({ plain: true });
-    res.render('language-posts', { language, loggedIn: req.session.loggedIn });
+    res.render('language-posts', { language, languages, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -58,7 +70,7 @@ router.get('/note/:id', withAuth, async (req, res) => {
 
     const note = dbNoteData.get({ plain: true });
 
-    res.render('note', { note, loggedIn: req.session.loggedIn });
+    res.render('individual-note', { note, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
