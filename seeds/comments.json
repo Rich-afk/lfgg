@@ -3,18 +3,30 @@
     "description": "interesting info",
     "user_id": 1,
     "note_id": 1
-  
   },
   {
     "description": "interesting info 2",
     "user_id": 2,
     "note_id": 2
-  
   },
   {
     "description": "interesting info 3",
     "user_id": 3,
     "note_id": 3
-   
+  },
+  {
+    "description": "interesting info 4",
+    "user_id": 1,
+    "note_id": 4
+  },
+  {
+    "description": "interesting info 5",
+    "user_id": 2,
+    "note_id": 5
+  },
+  {
+    "description": "interesting info 6",
+    "user_id": 3,
+    "note_id": 6
   }
 ]

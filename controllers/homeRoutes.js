@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Language, Note, User } = require('../models');
+const { Language, Note, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -97,11 +97,30 @@ router.get('/profile/:id', withAuth, async (req, res) => {
 
 router.get('/notes/:id', withAuth, async (req, res) => {
   try {
-    const dbNoteData = await Note.findByPk(req.params.id);
+    const dbNoteData = await Note.findByPk(req.params.id,
+      {
+        include: [
+          {
+            model: User,
+            attributes: ['name'],
+          },
+          {
+            model: Comment,
+            attributes: ['description'],
+            include: {
+              model: User,
+              attributes: ['name']
+            }
+          }
+        ]
+      });
 
     const note = dbNoteData.get({ plain: true });
 
-    res.render('individual-note', { note, loggedIn: req.session.loggedIn });
+    res.render('individual-note', {
+      note,
+      loggedIn: req.session.loggedIn
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

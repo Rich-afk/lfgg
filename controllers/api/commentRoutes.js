@@ -15,7 +15,7 @@ router.post('/', withAuth, (req, res) => {
   Comment.create({
     description: req.body.description,
     user_id: req.session.user_id,
-    note_id: req.body.post_id
+    note_id: req.body.note_id
   })
     .then(commentData => res.json(commentData))
     .catch(err => {
@@ -43,6 +43,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 router.put('/:id', withAuth, async (req, res) => {
   console.log(req.body)
   try {
