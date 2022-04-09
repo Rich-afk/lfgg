@@ -27,12 +27,9 @@ Note.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
+    original_poster: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     language_id: {
       type: DataTypes.INTEGER,
@@ -40,6 +37,13 @@ Note.init(
         model: 'language',
         key: 'id'
       }
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
     },
   },
   {
