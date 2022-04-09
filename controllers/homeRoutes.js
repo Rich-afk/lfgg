@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Language, Note } = require('../models');
+const { Language, Note, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -64,7 +64,38 @@ router.get('/language/:id', withAuth, async (req, res) => {
   }
 });
 
-router.get('/note/:id', withAuth, async (req, res) => {
+router.get('/profile', withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Note }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('profile', {
+      ...user,
+      loggedIn: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/profile/:id', withAuth, async (req, res) => {
+  try {
+    const dbUserData = await User.findByPk(req.params.id);
+
+    const user = dbUserData.get({ plain: true });
+
+    res.render('profile', { user, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/notes/:id', withAuth, async (req, res) => {
   try {
     const dbNoteData = await Note.findByPk(req.params.id);
 
