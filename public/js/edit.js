@@ -1,12 +1,12 @@
 async function editFormHandler(event) {
-  event.preventDefault();dfgsdfgs
+  event.preventDefault();
 
   const title = document.querySelector('input[name="post-title"]').value.trim();
   const comment = document.querySelector('input[name="post-comment"]').value.trim();
   const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
   ];
-  const response = await fetch(`/api/posts/${id}`, {
+  const response = await fetch(`/api/notes/${id}`, {
       method: 'PUT',
       body: JSON.stringify({
           title,
