@@ -13,7 +13,7 @@
     "title": "Cramming for Finals",
     "content": "Meck co. Library 4/10 @ 10am",
     "filename": "01-blossoming-apricot.jpg",
-    "user_id": 2,
+    "user_id": 1,
     "language_id": 2,
     "original_poster": "Sal"
   },
@@ -22,7 +22,7 @@
     "title": "I have no clue what I'm doing plz help",
     "content": "Romare Bearden Park 4/11 @ 6pm",
     "filename": "01-blossoming-apricot.jpg",
-    "user_id": 3,
+    "user_id": 2,
     "language_id": 3,
     "original_poster": "Amiko"
   },
@@ -31,7 +31,7 @@
     "title": "Dinner & Designs",
     "content": "Charlotte Beer Garden 4/14 @ 7pm",
     "filename": "01-blossoming-apricot.jpg",
-    "user_id": 1,
+    "user_id": 2,
     "language_id": 4,
     "original_poster": "Amiko"
   },
@@ -40,7 +40,7 @@
     "title": "Brushing up on new Python stuff",
     "content": "UNCC Library 4/16 @ 1pm",
     "filename": "01-blossoming-apricot.jpg",
-    "user_id": 2,
+    "user_id": 3,
     "language_id": 5,
     "original_poster": "Lernantino"
   },
