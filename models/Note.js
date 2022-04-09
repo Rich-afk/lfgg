@@ -20,16 +20,13 @@ Note.init(
     },
     date_created: {
       type: DataTypes.DATE,
-      allowNull: false,
       defaultValue: DataTypes.NOW,
     },
     filename: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     original_poster: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     language_id: {
       type: DataTypes.INTEGER,
