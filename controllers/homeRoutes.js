@@ -1,31 +1,24 @@
 const router = require('express').Router();
-const { Note, User, Comment } = require('../models');
+const { Language, Note } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    const dbBlogPostData = await Note.findAll({
+    const dbLanguageData = await Language.findAll({
       include: [
         {
-          model: User,
-          attributes: ['name'],
-        },
-        {
-          model: Comment,
-          include: {
-            model: User,
-            attributes: ['name'],
-          }
+          model: Note,
+          attributes: ['filename', 'content'],
         },
       ],
     });
 
-    const posts = dbBlogPostData.map((blogPost) =>
-      blogPost.get({ plain: true })
+    const languages = dbLanguageData.map((language) =>
+      language.get({ plain: true })
     );
 
     res.render('homepage', {
-      posts,
+      languages,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -34,58 +27,47 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/blogposts/:id', async (req, res) => {
+router.get('/language/:id', withAuth, async (req, res) => {
   try {
-    const dbBlogPostData = await Note.findByPk(req.params.id, {
+    const dbLanguageData = await Language.findByPk(req.params.id, {
       include: [
         {
-          model: User,
-          attributes: ['name'],
+          model: Note,
+          attributes: [
+            'id',
+            'title',
+            'content',
+            'date_created',
+            'user_id',
+          ],
         },
-        {
-          model: Comment,
-          include: {
-            model: User,
-            attributes: ['name']
-          }
-        }
-
       ],
     });
 
-
-    const blogpost = dbBlogPostData.get({ plain: true });
-
-    res.render('blogposts', {
-      blogpost,
-      loggedIn: req.session.loggedIn
-    });
+    const language = dbLanguageData.get({ plain: true });
+    res.render('language-posts', { language, loggedIn: req.session.loggedIn });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
 
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/note/:id', withAuth, async (req, res) => {
   try {
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Note }],
-    });
+    const dbNoteData = await Note.findByPk(req.params.id);
 
-    const user = userData.get({ plain: true });
+    const note = dbNoteData.get({ plain: true });
 
-    res.render('profile', {
-      ...user,
-      loggedIn: true
-    });
+    res.render('note', { note, loggedIn: req.session.loggedIn });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/profile');
+    res.redirect('/');
     return;
   }
 

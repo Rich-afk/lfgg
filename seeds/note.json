@@ -2,31 +2,37 @@
   {
     "title": "Group Study Sesh w/ IPAs",
     "content": "Sycamore Brewing 4/9 @ 1pm",
+    "filename": "01-blossoming-apricot.jpg",
     "user_id": 1
   },
   {
     "title": "Cramming for Finals",
     "content": "Meck co. Library 4/10 @ 10am",
+    "filename": "01-blossoming-apricot.jpg",
     "user_id": 2
   },
   {
     "title": "I have no clue what I'm doing plz help",
     "content": "Romare Bearden Park 4/11 @ 6pm",
+    "filename": "01-blossoming-apricot.jpg",
     "user_id": 3
   },
   {
     "title": "Dinner & Designs",
     "content": "Charlotte Beer Garden 4/14 @ 7pm",
+    "filename": "01-blossoming-apricot.jpg",
     "user_id": 1
   },
   {
     "title": "Brushing up on new Python stuff",
     "content": "UNCC Library 4/16 @ 1pm",
+    "filename": "01-blossoming-apricot.jpg",
     "user_id": 2
   },
   {
     "title": "I have an exam next week!",
     "content": "Honestly anywhere 4/15 @ 4pm",
+    "filename": "01-blossoming-apricot.jpg",
     "user_id": 3
   }
 ]

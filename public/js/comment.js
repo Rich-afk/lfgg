@@ -22,6 +22,7 @@ async function commentFormHandler(event) {
     }
   }
 }
+
 const handleComment = async (event) => {
   if (event.target.matches('#delete')) {
     const id = event.target.getAttribute('data-id');
@@ -29,7 +30,7 @@ const handleComment = async (event) => {
       method: 'DELETE',
     });
     if (response.ok) {
-      document.location.replace(`/blogposts/${postId}`);
+      document.location.replace(`/notes/${postId}`);
     } else {
       alert('Failed to delete comment');
     }
@@ -62,7 +63,7 @@ const handleComment = async (event) => {
       }
     });
     if (response.ok) {
-      document.location.replace(`/blogposts/${postId}`);
+      document.location.replace(`/notes/${postId}`);
     } else {
       alert('Failed to update comment');
     }
