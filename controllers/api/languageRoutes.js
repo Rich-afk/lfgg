@@ -57,7 +57,7 @@ router.get('/notes/:id', async (req, res) => {
 
     const notes = dbNotePostData.get({ plain: true });
 
-    res.render('notes', {
+    res.render('individual-note', {
       notes,
       loggedIn: req.session.loggedIn
     });
