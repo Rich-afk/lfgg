@@ -35,3 +35,15 @@ header, .project:not(:last-child) {
   background-color: #E6E6E6;
   color: #3c3b85;
 }
+
+.cardcolor {
+  background-color: #9699B0;
+}
+
+.cardcolor2 {
+  background-color: #F99FA7;
+}
+
+.bcg {
+  background-color: #272932;
+}
