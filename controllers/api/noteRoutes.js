@@ -10,6 +10,8 @@ router.post('/', withAuth, async (req, res) => {
     const newNotePost = await Note.create({
       ...req.body,
       user_id: req.session.user_id,
+      language_id: req.body.language
+      
     });
 
     res.status(200).json(newNotePost);
