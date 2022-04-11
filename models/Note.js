@@ -25,9 +25,6 @@ Note.init(
     filename: {
       type: DataTypes.STRING,
     },
-    original_poster: {
-      type: DataTypes.STRING,
-    },
     language_id: {
       type: DataTypes.INTEGER,
       references: {
