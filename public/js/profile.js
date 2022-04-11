@@ -1,13 +1,14 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
+  const language = document.querySelector('#notes-language').value.trim();
   const title = document.querySelector('#notes-name').value.trim();
   const content = document.querySelector('#notes-desc').value.trim();
 
-  if (title && content) {
+  if (title && content && language) {
     const response = await fetch(`/api/notes`, {
       method: 'POST',
-      body: JSON.stringify({ title, content }),
+      body: JSON.stringify({ language, title, content }),
       headers: {
         'Content-Type': 'application/json',
       },
