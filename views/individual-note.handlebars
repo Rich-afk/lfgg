@@ -1,7 +1,7 @@
 <div class="text-center">
   <h2>{{note.title}}</h2>
   <p>{{note.content}}</p>
-  <p>Created by {{note.original_poster}} on {{format_date note.date_created}}</p>
+  <p>Created by {{note.user.name}} on {{format_date note.date_created}}</p>
   <article class="note" id="comment-form">
     <form class="comment-form">
       <div>Comment</div>
