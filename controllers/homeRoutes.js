@@ -33,7 +33,6 @@ router.get('/language/:id', withAuth, async (req, res) => {
       include: [
         {
           model: Note,
-          attributes: ['title', 'original_poster'],
         },
       ],
     });
@@ -44,14 +43,6 @@ router.get('/language/:id', withAuth, async (req, res) => {
       include: [
         {
           model: Note,
-          attributes: [
-            'id',
-            'title',
-            'original_poster',
-            'content',
-            'date_created',
-            'user_id',
-          ],
         },
       ],
     });
@@ -106,7 +97,6 @@ router.get('/notes/:id', withAuth, async (req, res) => {
           },
           {
             model: Comment,
-            attributes: ['description'],
             include: {
               model: User,
               attributes: ['name']
@@ -116,7 +106,7 @@ router.get('/notes/:id', withAuth, async (req, res) => {
       });
 
     const note = dbNoteData.get({ plain: true });
-
+    console.log(note);
     res.render('individual-note', {
       note,
       loggedIn: req.session.loggedIn
