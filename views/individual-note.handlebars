@@ -1,37 +1,33 @@
-<div class="text-center mt-5 card">
-  <h2 class="card-header-title">{{note.title}}</h2>
-  <p>{{note.content}}</p>
-  <p>Created by {{note.user.name}} on {{format_date note.date_created}}</p>
-  <article class="note" id="comment-form">
-    <form class="comment-form">
-</div>
-
-<div class="card mx-5 mt-5">
-  <div>Comment</div>
-  <div>
-    <textarea class="input mt-5" name="comment-body" placeholder="Add a Comment..."></textarea>
-  </div>
-  <div>
-    <button class=" button mt-5" type="submit" id="submit">Submit</button>
-  </div>
-</div>
-</form>
-</article>
-
-<div class="comment-list card mt-5">
-  {{#each note.comments as |comment| }}
-  <div class="" id="comment-{{comment.id}}">
-    <p>
-      {{comment.description}}
-    </p>
-    <div class="">
-      <button id="delete" class="button is-danger" data-id="{{comment.id}}">DELETE</button>
-      <button id="edit" class="button is-success" data-id="{{comment.id}}">EDIT</button>
+<div class="columns mt-5 mr-2 card" id="individual_post">
+  <h2 class="card-header-title">{{note.title}}<br></br>{{note.content}}</p>
+    <div class="card-image p-2">
+      <img src="https://picsum.photos/200">
     </div>
-  </div>
-  {{/each}}
+    <div class="card-content">
+      <div class="media-content">
+        <p class="title is-4">Created by <br></br>{{note.user.name}} on {{format_date note.date_created}}</p>
+      </div>
+    </div>
 </div>
-
+<div class="columns box comment-list card mt-5">
+  <article class="note" id="comment-form">
+    <form class="comment-form is-flex is-justify-content-center">
+      <textarea class="input mt-5" name="comment-body" placeholder="Add a Comment..."></textarea>
+      <button class="button mt-5" type="submit" id="submit">Submit</button>
+    </form>
+    {{#each note.comments as |comment| }}
+    <div class="" id="comment-{{comment.id}}">
+      <p class="p-3 m-2">
+        {{comment.description}} <br></br>by {{user.name}}
+      </p>
+      <div class="field is-grouped is-flex is-justify-content-space-around">
+        <button id="delete" class="button is-danger" data-id="{{comment.id}}">DELETE</button>
+        <button id="edit" class="button is-success" data-id="{{comment.id}}">EDIT</button>
+      </div>
+      {{/each}}
+  </article>
+</div>
+</div>
 <script>
   const postId = {{ note.id }};
 </script>
