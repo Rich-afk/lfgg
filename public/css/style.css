@@ -52,3 +52,14 @@ body {
 html {
   background-color: #272932;
 }
+
+#languageSelection:hover {
+  background-image:url(https://media3.giphy.com/media/smzfl3E7a4iHK/giphy.gif?cid=ecf05e47jn2ohr927m3qf1bxjxxyv1keh278a9uy4uy1n21m&rid=giphy.gif&ct=g);
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 12px;
+    width: 100%;
+  }
+}
