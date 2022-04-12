@@ -1,58 +1,59 @@
-<div class="card mt-5 p-3">
+<div class="mt-5 p-3">
+  <div class="card box">
 
-  <div class="row">
-    <div class="col-auto">
-      <h2>Welcome, {{name}}!</h2>
-    </div>
-  </div>
-
-  <div class="row mt-4">
-    <div class="col-md-6">
-      <h3>Create a New LFGG Post:</h3>
-
-      <form class="form new-notes-form">
-        <div class="form-group">
-          <label for="notes-language">Language Selection:</label>
-          <select name="notes-language" id="notes-language">
-            <option value="1">JavaScript</option>
-            <option value="2">HTML</option>
-            <option value="3">CSS</option>
-            <option value="4">C++</option>
-            <option value="5">Python</option>
-            <option value="6">Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="notes-name">Post Title:</label>
-          <input class="form-input" type="text" id="notes-name" name="notes-name" />
-        </div>
-        <div class="form-group">
-          <label for="notes-desc">Study Session Details:</label>
-          <textarea class="form-input" id="notes-desc" name="notes-desc" placeholder="Add Details..."></textarea>
-        </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary">Create</button>
-        </div>
-      </form>
+    <div class="card row box-radius-small">
+        <h1 class=" card-header-title is-justify-content-center cardcolor2 is-size-2 ">Welcome, {{name}}!</h1>
     </div>
 
-    {{#if notes.length}}
-    <div class="col-md-6 notes-list">
-      <h3>Current LFGG Posts:</h3>
+    <div class="row mt-4">
+      <div class="card-content col-md-6">
+        <h3>Create a New LFGG Post:</h3>
 
-      {{#each notes as |note|}}
-      <div class="row mb-2">
-        <div class="col-md-8">
-          <a href="/notes/{{note.id}}">{{note.title}}</a>
-        </div>
-        <div class="col-md-4">
-          <button class="btn btn-sm btn-danger" data-id="{{note.id}}">DELETE</button>
-        </div>
+        <form class="form new-notes-form">
+          <div class="form-group dropdown mt-3 mb-3">
+            <label class="mr-3 " for="notes-language">Language Selection:</label>
+            <select name="notes-language" id="notes-language">
+              <option class="dropdown-item" value="1">JavaScript</option>
+              <option class="dropdown-item" value="2">HTML</option>
+              <option class="dropdown-item" value="3">CSS</option>
+              <option class="dropdown-item" value="4">C++</option>
+              <option class="dropdown-item" value="5">Python</option>
+              <option class="dropdown-item" value="6">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="notes-name">Post Title:</label>
+            <input class="input" type="text" id="notes-name" name="notes-name" />
+          </div>
+          <div class="form-group">
+            <label for="notes-desc">Study Session Details:</label>
+            <textarea class="input" id="notes-desc" name="notes-desc" placeholder="Add Details..."></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="button card-footer mt-3 is-primary">Create</button>
+          </div>
+        </form>
       </div>
-      {{/each}}
     </div>
-    {{/if}}
   </div>
+
+  {{#if notes.length}}
+  <div class="card col-md-6 notes-list mt-5 box">
+    <h3 class="card-header-title is-justify-content-center cardcolor2 is-size-2 box-radius-small">Current LFGG Posts:</h3>
+
+    {{#each notes as |note|}}
+    <div class="row ">
+      <div class="col-md-8 is-justify-content-center">
+        <a href="/notes/{{note.id}}">{{note.title}}</a>
+      </div>
+      <div class="col-md-4 p-3">
+        <button class="button card-footer is-danger" data-id="{{note.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
 </div>
 
 <script src="/js/profile.js"></script>
