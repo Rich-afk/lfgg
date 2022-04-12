@@ -11,47 +11,41 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 </head>
 
-
-<nav class="navbar headerbgc" role="navigation" aria-label="main navigation">
-  <div class="navbar-start">
-    <a class="" href="/">
-      <img src="/images/lfgglogo.png" width="150" height="150">
-    </a>
-
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-
-  <div id="navbarBasicExample" class="navbar-menu">
+<body class="bcg">
+  <nav class="navbar headerbgc" role="navigation" aria-label="main navigation">
     <div class="navbar-start">
-      {{#if loggedIn}}
+      <a class="" href="/">
+        <img src="/images/lfgglogo.png" width="150" height="150">
+      </a>
     </div>
 
-    <div>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        {{#if loggedIn}}
+      </div>
+
       <div>
-        <div class="navbar-end">
-      <a href="/profile" class=" button loginbutton">Profile</a>
-          <a id="logout" class="button loginbutton">Logout</a>
-          {{else}}
+        <div>
+          <div class="navbar-end">
+            <a href="/profile" class=" button loginbutton">Profile</a>
+            <a id="logout" class="button loginbutton">Logout</a>
+            {{else}}
           </div class="navbar-end">
           <a href="/login" class="button loginbutton">Log in</a>
-          </div>
-          {{/if}}
         </div>
+        {{/if}}
       </div>
     </div>
+    </div>
+    </div>
+  </nav>
+  <main class="columns is-flex-wrap-wrap is-justify-content-center bcg">
+    {{{body}}}
+  </main>
   </div>
-</nav>
-<main class="columns is-flex-wrap-wrap is-justify-content-center bcg">
-  {{{body}}}
-</main>
-</div>
-{{#if loggedIn}}
-<script src="/js/logout.js"></script>
-{{/if}}
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>

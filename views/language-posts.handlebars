@@ -1,12 +1,12 @@
-<section class="container">
-  <h3 class="language-name has-text-centered mb-5">{{language.coding_lang}}</h3>
-  <section class="flex-row justify-center">
+<section>
+  <h3 class="language-name has-text-centered mt-5 has-text-white is-size-1">{{language.coding_lang}}</h3>
+  <section class="">
     {{#each language.notes as |note|}}
-    <section class="card">
+    <section class="card p-3 mt-5">
       <a href="/notes/{{id}}">
-        <header>{{title}}</header>
+        <header class="card-header-title is-flex is-justify-content-center">{{title}}</header>
 
-        <div class="card-body">
+        <div class="card-image is-flex is-justify-content-center">
           <img src="https://picsum.photos/200">
         </div>
       </a>

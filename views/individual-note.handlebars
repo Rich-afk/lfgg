@@ -1,32 +1,37 @@
-<div class="text-center">
-  <h2>{{note.title}}</h2>
+<div class="text-center mt-5 card">
+  <h2 class="card-header-title">{{note.title}}</h2>
   <p>{{note.content}}</p>
   <p>Created by {{note.user.name}} on {{format_date note.date_created}}</p>
   <article class="note" id="comment-form">
     <form class="comment-form">
-      <div>Comment</div>
-      <div>
-        <textarea class="comment-body" name="comment-body" placeholder="Add a Comment..."></textarea>
-      </div>
-      <div>
-        <button type="submit" id="submit">Submit</button>
-      </div>
-    </form>
-  </article>
 </div>
-<div class="comment-list">
+
+<div class="card mx-5 mt-5">
+  <div>Comment</div>
+  <div>
+    <textarea class="input mt-5" name="comment-body" placeholder="Add a Comment..."></textarea>
+  </div>
+  <div>
+    <button class=" button mt-5" type="submit" id="submit">Submit</button>
+  </div>
+</div>
+</form>
+</article>
+
+<div class="comment-list card mt-5">
   {{#each note.comments as |comment| }}
-  <div id="comment-{{comment.id}}">
+  <div class="" id="comment-{{comment.id}}">
     <p>
       {{comment.description}}
     </p>
-    <div class="col-md-4">
-      <button id="delete" class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button>
-      <button id="edit" class="btn btn-sm btn-danger" data-id="{{comment.id}}">EDIT</button>
+    <div class="">
+      <button id="delete" class="button is-danger" data-id="{{comment.id}}">DELETE</button>
+      <button id="edit" class="button is-success" data-id="{{comment.id}}">EDIT</button>
     </div>
   </div>
   {{/each}}
 </div>
+
 <script>
   const postId = {{ note.id }};
 </script>
