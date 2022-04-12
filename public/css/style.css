@@ -44,6 +44,12 @@ header, .project:not(:last-child) {
   background-color: #F99FA7;
 }
 
-.bcg {
+body {
+  background-color: #272932;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+html {
   background-color: #272932;
 }
