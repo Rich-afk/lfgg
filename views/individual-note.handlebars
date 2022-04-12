@@ -1,20 +1,20 @@
-<div class="columns mt-5 card" id="individual_post">
-  <h2 class="card-header-title pl-3">{{note.title}}<br></br>{{note.content}}</p>
-    <img class="card-image p-2" src="https://picsum.photos/200">
-    <div class="card-content">
+<div class="columns is-gapless is-flex is-justify-content-center mt-5 card" id="individual_post">
+  <img class="card-image p-2" src="https://picsum.photos/200">
+  <h2 class="card-header-title pl-3">{{note.title}}<br></br>{{note.content}}<br></br>Created by <br></br>{{note.user.name}} on {{format_date note.date_created}}</p>
+    {{!-- <div class="card-content">
       <div class="media-content">
-        <p class="title is-4">Created by <br></br>{{note.user.name}} on {{format_date note.date_created}}</p>
+        <p class="title is-6">Created by <br></br>{{note.user.name}} on {{format_date note.date_created}}</p>
       </div>
-    </div>
+    </div> --}}
 </div>
-<div class="columns box comment-list card mt-5">
+<div class="columns is-gapless box comment-list card mt-5">
   <article class="note" id="comment-form">
     <form class="comment-form is-flex is-justify-content-center">
       <textarea class="input mt-5" name="comment-body" placeholder="Add a Comment..."></textarea>
       <button class="button mt-5" type="submit" id="submit">Submit</button>
     </form>
     {{#each note.comments as |comment| }}
-    <div class="" id="comment-{{comment.id}}">
+    <div id="comment-{{comment.id}}">
       <p class="p-3 m-2">
         {{comment.description}} <br></br>by {{user.name}}
       </p>

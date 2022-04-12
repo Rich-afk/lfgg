@@ -1,5 +1,11 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 
+.headline {
+  color:#065b83;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
 nav {
   display: flex;
   flex-direction: row;
