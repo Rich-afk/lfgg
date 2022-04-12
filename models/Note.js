@@ -24,6 +24,7 @@ Note.init(
     },
     filename: {
       type: DataTypes.STRING,
+      defaultValue: "https://picsum.photos/200",
     },
     language_id: {
       type: DataTypes.INTEGER,

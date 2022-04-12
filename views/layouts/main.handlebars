@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
   <title>LFGG: Looking For Good Grades</title>
   {{!--
   <link rel="stylesheet" type="text/css" href="/css/jass.css"> --}}
@@ -13,16 +13,19 @@
 
 <body class="bcg">
   <nav class="navbar headerbgc" role="navigation" aria-label="main navigation">
-      <a class="" href="/">
-        <img src="/images/lfgglogo.png" width="150" height="150">
-      </a>
-      {{#if loggedIn}}
-      <div class="navbar-end">
-        <a href="/profile" class=" button loginbutton">Profile</a>
-        <a id="logout" class="button loginbutton">Logout</a>
-        {{else}}
-        <a href="/login" class="button loginbutton">Log in</a>
+    <a class="is-flex is-flex-direction-row is-align-items-center" href="/">
+      <img src="/images/lfgglogo.png" width="150" height="150">
+      <div class="headline">
+        <h1>Looking For Good Grades</h1>
       </div>
+    </a>
+    {{#if loggedIn}}
+    <div class="navbar-end">
+      <a href="/profile" class=" button loginbutton">Create & View Posts</a>
+      <a id="logout" class="button loginbutton">Logout</a>
+      {{else}}
+      <a href="/login" class="button loginbutton">Log in</a>
+    </div>
     {{/if}}
   </nav>
 
@@ -30,6 +33,7 @@
     {{{body}}}
   </main>
 
+  <footer class="is-flex is-justify-content-center">&copy; LFGG 2022</footer>
   </div>
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
