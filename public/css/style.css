@@ -56,6 +56,12 @@ html {
 #languageSelection:hover {
   background-image:url(https://media3.giphy.com/media/smzfl3E7a4iHK/giphy.gif?cid=ecf05e47jn2ohr927m3qf1bxjxxyv1keh278a9uy4uy1n21m&rid=giphy.gif&ct=g);
 }
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 @media screen and (max-width: 800px) {
   body {
