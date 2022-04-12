@@ -1,8 +1,6 @@
-<div class="columns mt-5 mr-2 card" id="individual_post">
-  <h2 class="card-header-title">{{note.title}}<br></br>{{note.content}}</p>
-    <div class="card-image p-2">
-      <img src="https://picsum.photos/200">
-    </div>
+<div class="columns mt-5 card" id="individual_post">
+  <h2 class="card-header-title pl-3">{{note.title}}<br></br>{{note.content}}</p>
+    <img class="card-image p-2" src="https://picsum.photos/200">
     <div class="card-content">
       <div class="media-content">
         <p class="title is-4">Created by <br></br>{{note.user.name}} on {{format_date note.date_created}}</p>
